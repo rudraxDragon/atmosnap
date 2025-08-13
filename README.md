@@ -14,7 +14,7 @@ A modern, responsive weather application built with React that provides real-tim
 
 ## 🚀 Live Demo
 
-[View Live Application](https://your-app-url.netlify.app) <!-- Update with your actual URL -->
+[View Live Application](https://atmosnap.netlify.app/) 
 
 ## 🛠️ Tech Stack
 
