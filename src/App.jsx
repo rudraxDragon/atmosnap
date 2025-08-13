@@ -33,13 +33,9 @@ export default function App() {
   const [mobileSearchFading, setMobileSearchFading] = useState(false)
   const [mobileSelectedDay, setMobileSelectedDay] = useState('0')
   const [mobileLoading, setMobileLoading] = useState(false)
-
-  // New state for region selection
   const [searchRegion, setSearchRegion] = useState('india')
   const [showRegionDropdown, setShowRegionDropdown] = useState(false)
   const regionDropdownRef = useRef(null)
-
-  // Info message state
   const [showInfoMessage, setShowInfoMessage] = useState(false)
   const [infoMessageTimeout, setInfoMessageTimeout] = useState(null)
 
@@ -52,7 +48,6 @@ export default function App() {
     return () => window.removeEventListener('resize', checkIsMobile)
   }, [])
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (regionDropdownRef.current && !regionDropdownRef.current.contains(event.target)) {
@@ -199,7 +194,6 @@ export default function App() {
 
       if (weatherResult.forecast?.forecastday) {
         // ---- WeatherAPI ----
-        console.log("Processing WeatherAPI data");
         forecastDays = weatherResult.forecast.forecastday.map(day => ({
           ...day,
           hour: day.hour.map(h => ({
@@ -228,7 +222,6 @@ export default function App() {
       }
       else if (weatherResult.days) {
         // ---- Visual Crossing ----
-        console.log("Processing Visual Crossing data");
         forecastDays = weatherResult.days.slice(0, 3).map(day => ({
           date: day.datetime,
           hour: day.hours.map(h => ({
@@ -258,8 +251,6 @@ export default function App() {
         country = weatherResult.location?.country || display_name.split(", ").pop();
       }
 
-      console.log("Forecast days processed:", forecastDays);
-      console.log("Sample hour data:", forecastDays[0]?.hour[0]);
 
       // 4️⃣ Save forecast in your 3 day arrays
       setForecastDayZero(forecastDays[0]?.hour || []);
@@ -279,7 +270,6 @@ export default function App() {
 
       // 6️⃣ Animation/view transitions
       if (isMobile) {
-        // Add delay for mobile loading screen
         setTimeout(() => {
           setShowMobileResults(true);
           setMobileSearchFading(false);
@@ -290,7 +280,6 @@ export default function App() {
       }
 
     } catch (err) {
-      console.error("⌛ Error in handleSubmit:", err);
       alert(`Error: ${err.message}`);
       if (isMobile) {
         setMobileSearchFading(false);
@@ -542,7 +531,6 @@ export default function App() {
                   {chartData.map((data, index) => {
                     // Get the correct icon class
                     const iconClass = weatherCodeToIcon[data.condition] || 'wi-na';
-                    console.log(`Icon for condition ${data.condition}:`, iconClass);
 
                     return (
                       <div key={index} className="temp-label" style={{
@@ -776,9 +764,7 @@ export default function App() {
             </div>
             <div className="mobileResultBox">
               {getMobileForecastData().map((hourData, index) => {
-                // Get the correct icon for mobile view
                 const iconClass = weatherCodeToIcon[hourData.condition?.code || hourData.iconKey] || 'wi-na';
-                console.log(`Mobile icon for condition ${hourData.condition?.code || hourData.iconKey}:`, iconClass);
 
                 return (
                   <div key={index} className="tempBox" style={{

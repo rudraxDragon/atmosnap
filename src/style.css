@@ -531,7 +531,7 @@ footer {
 
 .region-dropdown-menu {
   position: absolute;
-  bottom: 100%; /* Opens upward */
+  bottom: 100%; 
   left: 0;
   background-color: #222;
   border: 1px solid #444;
