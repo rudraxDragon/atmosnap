@@ -108,9 +108,9 @@ atmosnap/
 │   ├── visualcrossing.js         # Visual Crossing API handler
 │   └── weather.js                # WeatherAPI handler
 ├── public/
-│   ├── me.jpg                    # Developer photo
+│   ├── me.jpg                    # My Photo :)
 │   ├── github.svg                # GitHub icon
-│   └── poop.png                  # Custom flag placeholder
+│   └── poop.png                  # Custom flag icon
 └── README.md
 ```
 
