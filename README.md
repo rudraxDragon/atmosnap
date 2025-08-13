@@ -178,11 +178,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🔮 Future Enhancements
 
-- [ ] Weather alerts and notifications
 - [ ] Location-based recommendations
-- [ ] Weather history and trends
-- [ ] Offline mode support
-- [ ] PWA capabilities
 - [ ] Dark/Light theme toggle
 
 ---
