@@ -9,11 +9,9 @@ const WeatherSearch = async (lat, lon, searchRegion = 'india') => {
 
       if (res.ok) {
         const data = await res.json()
-        console.log('✅ Using Visual Crossing weather data for India')
         return data
       }
     } catch (error) {
-      console.log('❌ Visual Crossing failed, falling back to WeatherAPI')
     }
 
     // Fallback to WeatherAPI for India
@@ -26,10 +24,8 @@ const WeatherSearch = async (lat, lon, searchRegion = 'india') => {
       if (!res.ok) throw new Error('Failed to fetch weather data')
 
       const data = await res.json()
-      console.log('✅ Using WeatherAPI fallback for India')
       return data
     } catch (error) {
-      console.error('Both weather APIs failed for India:', error)
       throw new Error('Failed to fetch weather data from all sources')
     }
   } else {
@@ -43,10 +39,8 @@ const WeatherSearch = async (lat, lon, searchRegion = 'india') => {
       if (!res.ok) throw new Error('Failed to fetch weather data')
 
       const data = await res.json()
-      console.log('✅ Using WeatherAPI for location outside India')
       return data
     } catch (error) {
-      console.error('WeatherAPI failed for outside India:', error)
       throw new Error('Failed to fetch weather data')
     }
   }
