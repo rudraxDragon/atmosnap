@@ -21,7 +21,7 @@ A modern, responsive weather application built with React that provides real-tim
 - **Frontend**: React 18+ with Hooks
 - **Styling**: CSS3 with custom animations and responsive design
 - **Charts**: Recharts for data visualization
-- **Icons**: Weather Icons library
+- **Icons**: [Weather Icons](https://github.com/erikflowers/weather-icons) by Erik Flowers
 - **Build Tool**: Vite
 - **Deployment**: Netlify with serverless functions
 - **APIs**: 
@@ -156,7 +156,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Rudraksh Prasad**
 - GitHub: [@rudraxDragon](https://github.com/rudraxDragon)
-- Email: your.email@domain.com <!-- Update with your actual email -->
+- Email: rd4700290@gmail.com
 
 ## 🙏 Acknowledgments
 
