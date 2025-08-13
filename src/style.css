@@ -86,6 +86,7 @@ body {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -96,6 +97,7 @@ body {
     opacity: 0;
     transform: translateY(-20px) scale(0.9);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -531,7 +533,7 @@ footer {
 
 .region-dropdown-menu {
   position: absolute;
-  bottom: 100%; 
+  bottom: 100%;
   left: 0;
   background-color: #222;
   border: 1px solid #444;
@@ -593,12 +595,41 @@ footer {
     overflow-x: hidden;
     overflow-y: auto;
     height: 100vh;
+    height: 100dvh;
     width: 100vw;
-    position: fixed;
+    position: relative;
+  }
+
+  .footer-mobile {
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+  }
+
+  .mobileResultBox {
+    padding-bottom: max(120px, calc(120px + env(safe-area-inset-bottom)));
   }
 }
 
-@media (min-width: 751px) {
+@media (max-width: 750px) and (max-height: 600px) {
+  /* For shorter screens, make footer smaller */
+  .footer-box-mobile, .footer-name-mobile {
+    height: 50px;
+    font-size: 0.9rem;
+  }
+  
+  .footer-mobile {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+/* For very tall screens, ensure footer doesn't float */
+@media (max-width: 750px) and (min-height: 900px) {
+  .mobileContainer {
+    min-height: 100vh;
+  }
+}
+
+@media (min-width: 901px) {
   body {
     overflow-x: hidden;
     overflow-y: hidden;
@@ -647,15 +678,19 @@ footer {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
 
 @keyframes pulseText {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.6;
   }
+
   50% {
     opacity: 1;
   }
@@ -664,12 +699,14 @@ footer {
 .mobileContainer {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100dvh;
   width: 100vw;
   position: relative;
   animation: fadeInFromTop 1s ease-out forwards;
   opacity: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   max-width: 100%;
 }
 
@@ -707,7 +744,7 @@ footer {
 
 .mobileSearchBox {
   position: absolute;
-  top: 45%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   animation: scaleIn 1s ease-out 0.8s forwards;
@@ -742,9 +779,12 @@ footer {
   opacity: 0;
   transform: translateX(100%);
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100dvh;
   overflow-y: auto;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .mobileLocationBox {
@@ -760,13 +800,15 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   margin-block: 20px;
-  padding: 0 10px;
+  padding: 0 10px 120px 10px;
   box-sizing: border-box;
+  flex: 1;
 }
+
 
 .tempBox {
   background-color: #323131;
@@ -1015,7 +1057,8 @@ footer {
 
 .mobile-region-dropdown-menu {
   position: absolute;
-  bottom: 100%; /* Opens upward */
+  bottom: 100%;
+  /* Opens upward */
   left: 0;
   background-color: #222;
   border: 1px solid #444;
@@ -1066,6 +1109,7 @@ footer {
     opacity: 0;
     transform: translateY(-20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -1076,6 +1120,7 @@ footer {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -1085,6 +1130,7 @@ footer {
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -1095,6 +1141,7 @@ footer {
     opacity: 0;
     transform: translateX(-30px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -1106,6 +1153,7 @@ footer {
     opacity: 0;
     transform: translateX(100%);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -1117,6 +1165,7 @@ footer {
     opacity: 0;
     transform: translateY(-30px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -1128,6 +1177,7 @@ footer {
     opacity: 0;
     transform: translateY(30px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -1139,6 +1189,7 @@ footer {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.8);
   }
+
   100% {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
@@ -1150,6 +1201,7 @@ footer {
     opacity: 0;
     transform: scale(0.8);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -1157,12 +1209,19 @@ footer {
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
+
   40% {
     transform: translateY(-5px);
   }
+
   60% {
     transform: translateY(-3px);
   }
@@ -1174,6 +1233,7 @@ footer {
     opacity: 0;
     transform: translateY(10px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -1185,6 +1245,7 @@ footer {
     opacity: 0;
     transform: translateY(10px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
