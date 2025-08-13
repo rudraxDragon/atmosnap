@@ -86,6 +86,7 @@ body {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -96,6 +97,7 @@ body {
     opacity: 0;
     transform: translateY(-20px) scale(0.9);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -531,7 +533,7 @@ footer {
 
 .region-dropdown-menu {
   position: absolute;
-  bottom: 100%; 
+  bottom: 100%;
   left: 0;
   background-color: #222;
   border: 1px solid #444;
@@ -647,15 +649,19 @@ footer {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
 
 @keyframes pulseText {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.6;
   }
+
   50% {
     opacity: 1;
   }
@@ -671,6 +677,7 @@ footer {
   opacity: 0;
   overflow: hidden;
   max-width: 100%;
+  padding-bottom: 90px;
 }
 
 .mobileContainer.fade-out {
@@ -745,6 +752,7 @@ footer {
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
+  padding-bottom: 90px;
 }
 
 .mobileLocationBox {
@@ -918,18 +926,20 @@ footer {
 }
 
 .footer-mobile {
-  margin-top: auto;
+  position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   flex-direction: row;
   color: #aaa;
   font-size: 1rem;
-  margin-bottom: 30px;
+  padding-bottom: 15px;
+  padding-top: 15px;
   animation: slideUp 0.6s ease-out 1.2s forwards;
   opacity: 0;
-  position: relative;
-  z-index: 5;
+  z-index: 100;
 }
 
 .footer-box-mobile {
@@ -1015,7 +1025,8 @@ footer {
 
 .mobile-region-dropdown-menu {
   position: absolute;
-  bottom: 100%; /* Opens upward */
+  bottom: 100%;
+  /* Opens upward */
   left: 0;
   background-color: #222;
   border: 1px solid #444;
@@ -1066,6 +1077,7 @@ footer {
     opacity: 0;
     transform: translateY(-20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -1076,6 +1088,7 @@ footer {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -1085,6 +1098,7 @@ footer {
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -1095,6 +1109,7 @@ footer {
     opacity: 0;
     transform: translateX(-30px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -1106,6 +1121,7 @@ footer {
     opacity: 0;
     transform: translateX(100%);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -1117,6 +1133,7 @@ footer {
     opacity: 0;
     transform: translateY(-30px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -1128,6 +1145,7 @@ footer {
     opacity: 0;
     transform: translateY(30px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -1139,6 +1157,7 @@ footer {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.8);
   }
+
   100% {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
@@ -1150,21 +1169,27 @@ footer {
     opacity: 0;
     transform: scale(0.8);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
   }
 }
 
-/* REMOVED: rotateIn animation - no longer used for mobile flag */
-
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
+
   40% {
     transform: translateY(-5px);
   }
+
   60% {
     transform: translateY(-3px);
   }
@@ -1176,6 +1201,7 @@ footer {
     opacity: 0;
     transform: translateY(10px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -1187,6 +1213,7 @@ footer {
     opacity: 0;
     transform: translateY(10px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
