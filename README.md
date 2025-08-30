@@ -55,10 +55,6 @@ A modern, responsive weather application built with React that provides real-tim
    npm run dev
    ```
 
-5. **For production deployment**, set up Netlify functions:
-   - Create a `netlify.toml` file in your root directory
-   - Deploy to Netlify and set environment variables in the dashboard
-
 ## 🔑 API Keys Setup
 
 ### WeatherAPI.com
