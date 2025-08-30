@@ -44,11 +44,9 @@ A modern, responsive weather application built with React that provides real-tim
 
 3. **Set up environment variables**
    
-   Create a `.env` file in the root directory:
-   ```env
-   WEATHER_API_KEY=your_weatherapi_key_here
-   VISUAL_CROSSING_API_KEY=your_visual_crossing_key_here
-   ```
+   Create a netlify account and create a serverless function and add your enviorment variables there by the names of 
+    **WEATHER_API_KEY**
+    **VISUAL_CROSSING_API_KEY**
 
 4. **Start the development server**
    ```bash
