@@ -52,7 +52,7 @@ A modern, responsive weather application built with React that provides real-tim
 
 4. **Start the development server**
    ```bash
-   npm run dev
+   netlify dev
    ```
 
 ## 🔑 API Keys Setup
